@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your skill matches on SkillSwap.">
+  <title>Matches — SkillSwap</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-icon"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="8" r="3" fill="#3B82F6"/><circle cx="8" cy="20" r="3" fill="#3B82F6" opacity="0.7"/><circle cx="24" cy="20" r="3" fill="#3B82F6" opacity="0.7"/></svg></span>
+          SkillSwap
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="explore.html">Explore</a>
+          <a href="matches.html">Matches</a>
+          <a href="profile.html?id=maya-chen">Profiles</a>
+          <a href="create-profile.html">Create Profile</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="create-profile.html" class="btn btn-primary btn-sm">Get started</a>
+          <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero compact">
+        <div class="container">
+          <span class="section-label">Your matches</span>
+          <h1 class="section-title">People ready to swap skills</h1>
+          <p class="section-desc">Based on your teach &amp; learn profile, here are your top complementary matches.</p>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="matches-header">
+            <div class="search-input-wrap" style="max-width: 360px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="match-search" placeholder="Filter matches..." autocomplete="off">
+            </div>
+            <div class="match-sort">
+              <select id="match-sort">
+                <option value="score">Sort by match %</option>
+                <option value="name">Sort by name</option>
+                <option value="sessions">Sort by sessions</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="user-profile-banner" class="glass-card fade-in" style="padding: 20px 24px; margin-bottom: 32px; display: none;">
+            <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+              <div style="flex: 1; min-width: 200px;">
+                <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 4px;">Showing matches for</p>
+                <p style="font-weight: 600;" id="banner-name"></p>
+              </div>
+              <div class="skill-tags" id="banner-teach"></div>
+              <span style="color: var(--text-muted);">↔</span>
+              <div class="skill-tags" id="banner-learn"></div>
+            </div>
+          </div>
+
+          <div class="cards-grid cards-grid-2" id="matches-grid"></div>
+
+          <div class="empty-state" id="matches-empty" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            <h3>No matches found</h3>
+            <p>Try adjusting your search or create a profile with more skills.</p>
+            <a href="create-profile.html" class="btn btn-primary" style="margin-top: 16px;">Update profile</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom"><span>&copy; 2026 SkillSwap. All rights reserved.</span></div>
+      </div>
+    </footer>
+
+    <div class="cookie-banner">
+      <p>We use cookies to personalize content and improve your experience on SkillSwap.</p>
+      <button class="btn btn-outline btn-sm cookie-accept">Okay</button>
+    </div>
+
+    <div class="modal-overlay" id="swap-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Start a skill swap</h3>
+          <button class="modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Send a swap request to <strong class="modal-user-name"></strong>? They'll receive a notification and can accept to start your skill exchange journey together.</p>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-outline btn-sm modal-cancel">Cancel</button>
+          <button class="btn btn-primary btn-sm" id="confirm-swap">Send request</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/matches.js"></script>
+</body>
+</html>

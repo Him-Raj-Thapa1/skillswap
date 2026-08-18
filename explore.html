@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore skills and find people to swap with on SkillSwap.">
+  <title>Explore Skills — SkillSwap</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-icon"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="8" r="3" fill="#3B82F6"/><circle cx="8" cy="20" r="3" fill="#3B82F6" opacity="0.7"/><circle cx="24" cy="20" r="3" fill="#3B82F6" opacity="0.7"/></svg></span>
+          SkillSwap
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="explore.html">Explore</a>
+          <a href="matches.html">Matches</a>
+          <a href="profile.html?id=maya-chen">Profiles</a>
+          <a href="create-profile.html">Create Profile</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="create-profile.html" class="btn btn-primary btn-sm">Get started</a>
+          <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="section-label">Discover</span>
+          <h1 class="section-title">Explore skills &amp; people</h1>
+          <p class="section-desc">Browse our community of learners and teachers. Find someone who knows what you want to learn.</p>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="search-bar">
+            <div class="search-input-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="search-input" placeholder="Search by name, skill, or location..." autocomplete="off">
+            </div>
+          </div>
+
+          <div class="filter-chips" id="filter-chips">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="teach">Can teach</button>
+            <button class="filter-chip" data-filter="learn">Wants to learn</button>
+          </div>
+
+          <div style="margin: 24px 0 16px; display: flex; justify-content: space-between; align-items: center;">
+            <p id="results-count" style="color: var(--text-muted); font-size: 0.875rem;"></p>
+          </div>
+
+          <div class="cards-grid" id="users-grid"></div>
+
+          <div class="empty-state" id="empty-state" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <h3>No results found</h3>
+            <p>Try adjusting your search or filters.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo"><span class="logo-icon"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="8" r="3" fill="#3B82F6"/><circle cx="8" cy="20" r="3" fill="#3B82F6" opacity="0.7"/><circle cx="24" cy="20" r="3" fill="#3B82F6" opacity="0.7"/></svg></span>SkillSwap</a>
+            <p>Exchange skills instead of money. Learn anything, teach what you love.</p>
+          </div>
+          <div class="footer-col"><h4>Product</h4><a href="explore.html">Explore Skills</a><a href="matches.html">Matches</a><a href="create-profile.html">Create Profile</a></div>
+          <div class="footer-col"><h4>Company</h4><a href="#">About</a><a href="#">Careers</a><a href="#">Blog</a></div>
+          <div class="footer-col"><h4>Legal</h4><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 SkillSwap. All rights reserved.</span></div>
+      </div>
+    </footer>
+
+    <div class="cookie-banner">
+      <p>We use cookies to personalize content and improve your experience on SkillSwap.</p>
+      <button class="btn btn-outline btn-sm cookie-accept">Okay</button>
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/explore.js"></script>
+</body>
+</html>

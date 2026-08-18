@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your SkillSwap profile and start exchanging skills.">
+  <title>Create Profile — SkillSwap</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-icon"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="8" r="3" fill="#3B82F6"/><circle cx="8" cy="20" r="3" fill="#3B82F6" opacity="0.7"/><circle cx="24" cy="20" r="3" fill="#3B82F6" opacity="0.7"/></svg></span>
+          SkillSwap
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="explore.html">Explore</a>
+          <a href="matches.html">Matches</a>
+          <a href="profile.html?id=maya-chen">Profiles</a>
+          <a href="create-profile.html">Create Profile</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="create-profile.html" class="btn btn-primary btn-sm">Get started</a>
+          <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container form-page">
+        <div class="form-page-header fade-in">
+          <span class="section-label">Join the community</span>
+          <h1 class="section-title">Create your profile</h1>
+          <p class="section-desc">Tell us what you can teach and what you'd like to learn. We'll find your perfect skill matches.</p>
+        </div>
+
+        <div class="glass-card form-card fade-in">
+          <div class="form-progress">
+            <div class="form-progress-step active" data-step="1"></div>
+            <div class="form-progress-step" data-step="2"></div>
+            <div class="form-progress-step" data-step="3"></div>
+          </div>
+
+          <form id="create-profile-form" novalidate>
+            <!-- Step 1: Basic Info -->
+            <div class="form-step active" data-step="1">
+              <h3 style="margin-bottom: 24px;">Basic information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First name</label>
+                  <input type="text" id="first-name" name="firstName" placeholder="Maya" required>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last name</label>
+                  <input type="text" id="last-name" name="lastName" placeholder="Chen" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="San Francisco, CA" required>
+              </div>
+              <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" placeholder="Tell the community about yourself, your background, and what excites you about skill swapping..." required></textarea>
+                <p class="form-hint">Minimum 20 characters</p>
+              </div>
+            </div>
+
+            <!-- Step 2: Skills to Teach -->
+            <div class="form-step" data-step="2">
+              <h3 style="margin-bottom: 24px;">Skills you can teach</h3>
+              <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.875rem;">Add the skills you're confident teaching others. Press Enter or click Add.</p>
+              <div class="form-group">
+                <label for="teach-input">Add a skill</label>
+                <div class="skill-input-wrapper">
+                  <input type="text" id="teach-input" placeholder="e.g. Python, Guitar, Public Speaking">
+                  <button type="button" class="btn btn-ghost btn-sm" id="add-teach">Add</button>
+                </div>
+                <div class="selected-skills" id="teach-skills"></div>
+              </div>
+              <div class="form-group">
+                <label>Popular skills</label>
+                <div class="filter-chips" id="popular-teach">
+                  <button type="button" class="filter-chip" data-skill="Python">Python</button>
+                  <button type="button" class="filter-chip" data-skill="JavaScript">JavaScript</button>
+                  <button type="button" class="filter-chip" data-skill="Graphic Design">Graphic Design</button>
+                  <button type="button" class="filter-chip" data-skill="Photography">Photography</button>
+                  <button type="button" class="filter-chip" data-skill="Guitar">Guitar</button>
+                  <button type="button" class="filter-chip" data-skill="Public Speaking">Public Speaking</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Skills to Learn -->
+            <div class="form-step" data-step="3">
+              <h3 style="margin-bottom: 24px;">Skills you want to learn</h3>
+              <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.875rem;">What would you like to learn from others? We'll match you with teachers.</p>
+              <div class="form-group">
+                <label for="learn-input">Add a skill</label>
+                <div class="skill-input-wrapper">
+                  <input type="text" id="learn-input" placeholder="e.g. UI Design, Spanish, Cooking">
+                  <button type="button" class="btn btn-ghost btn-sm" id="add-learn">Add</button>
+                </div>
+                <div class="selected-skills" id="learn-skills"></div>
+              </div>
+              <div class="form-group">
+                <label>Popular skills</label>
+                <div class="filter-chips" id="popular-learn">
+                  <button type="button" class="filter-chip" data-skill="UI Design">UI Design</button>
+                  <button type="button" class="filter-chip" data-skill="React">React</button>
+                  <button type="button" class="filter-chip" data-skill="Photography">Photography</button>
+                  <button type="button" class="filter-chip" data-skill="Spanish">Spanish</button>
+                  <button type="button" class="filter-chip" data-skill="Marketing">Marketing</button>
+                  <button type="button" class="filter-chip" data-skill="Cooking">Cooking</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn btn-outline" id="prev-step" style="visibility: hidden;">Back</button>
+              <button type="button" class="btn btn-primary" id="next-step">Continue</button>
+              <button type="submit" class="btn btn-primary" id="submit-form" style="display: none;">Create profile</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom"><span>&copy; 2026 SkillSwap. All rights reserved.</span></div>
+      </div>
+    </footer>
+
+    <div class="cookie-banner">
+      <p>We use cookies to personalize content and improve your experience on SkillSwap.</p>
+      <button class="btn btn-outline btn-sm cookie-accept">Okay</button>
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/create-profile.js"></script>
+</body>
+</html>
